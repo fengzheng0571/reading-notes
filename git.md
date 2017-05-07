@@ -102,5 +102,40 @@ $ git push origin master
 
 ### 克隆远程仓库
 ```
-git clone git@github.com:fengzheng0571/reading-notes.git
+$git clone git@github.com:fengzheng0571/reading-notes.git
 ```
+
+### 保存工作区内容
+```
+$git stash
+```
+
+### 恢复工作区内容
+```
+$git stash pop
+````
+或者
+```
+$ git stash list
+$ git stash apply stash@{0}
+```
+
+### 要查看远程库的信息
+```
+$ git remote
+```
+查看仓库详细信息
+```
+$ git remote -v
+```
+
+### 标签
+git tag <name>用于新建一个标签，默认为HEAD，也可以指定一个commit id；
+git tag -a <tagname> -m "blablabla..."可以指定标签信息；
+git tag -s <tagname> -m "blablabla..."可以用PGP签名标签；
+命令git tag可以查看所有标签。
+命令git show <tagname> 查看标签详细信息
+命令git push origin <tagname>可以推送一个本地标签；
+命令git push origin --tags可以推送全部未推送过的本地标签；
+命令git tag -d <tagname>可以删除一个本地标签；
+命令git push origin :refs/tags/<tagname>可以删除一个远程标签。
